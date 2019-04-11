@@ -2,7 +2,7 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@nbrowser/nb-chan.svg)](https://www.npmjs.com/package/@nbrowser/nb-chan)
 [![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/@nbrowser/nb-chan.svg)](https://github.com/nbrowser/nb-chan)
 
-nb-chan is a communication channel for Nucleome Browser.
+nb-chan is a communication channel for [Nucleome Browser](https://genome.compbio.cs.cmu.edu).
 
 nb-chan has the same function interface "on" and "call" as [d3-dispatch](https://github.com/d3/d3-dispatch). It is an [event emitter](https://nodejs.org/api/events.html) system between the tabs.
 
