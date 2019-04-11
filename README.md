@@ -69,7 +69,7 @@ If you want to your website can be connectable with NBridge, Please contact [us]
 
 Check the connection status of channel
 ```js
-  var c = chan()
+  var c = nb.chan()
   c.connect(function(){
     console.log(c.status())
   }
