@@ -24,6 +24,10 @@ Listen to other NBrowser tabs.
 c.on("update",function(d){
   //Add your code (user navigate to these genome coordinates in other tab, respond accordingly )
 })
+c.on("update.anything",function(d){
+  //register multiple listeners as d3-dispatch
+  //Add your other code (user navigate to these genome coordinates in other tab, respond accordingly )
+})
 c.on("brush",function(d){
   //Add your code  (user brush these genome coordinates in other tab, respond accordingly )
 })
@@ -74,3 +78,11 @@ Check the connection status of channel
     console.log(c.status())
   }
 ```
+Currently, standard communication code
+```
+event name: update and brush.
+pass data: regions = [...region ]
+           region format {genome:string,chr:string,start:int,end:int}
+```
+Start and end is defined as same as [bed format](https://genome.ucsc.edu/FAQ/FAQformat.html#format1). Start is 0-index. and end is not included in this region.
+
