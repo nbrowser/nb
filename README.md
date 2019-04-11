@@ -68,9 +68,9 @@ If you want to your website can be connectable with NBridge, Please contact [us]
 ## API Reference
 
 Check the connection status of channel
-``js
+```js
   var c = chan()
   c.connect(function(){
     console.log(c.status())
   }
-``
+```
