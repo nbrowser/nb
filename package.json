@@ -32,7 +32,9 @@
   },
   "devDependencies": {
     "eslint": "5",
-    "rollup": "0.64",
+    "rollup": "^0.64.1",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-node-resolve": "^4.2.3",
     "rollup-plugin-terser": "1",
     "tape": "4"
   }

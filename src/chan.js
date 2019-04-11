@@ -99,44 +99,42 @@ export default function() {
             })
         }
     }
-    // Add Share Worker (share worker js)
+    // TODO: Add Share Worker (share worker js) in case BroadcastChannel not support.
     return agent
 }
 
-function _connectExt(extId,_hub,status,callback,onclose) {
-        var chromeExtPort = window.chrome.runtime.connect(
-            extId)
-        console.log("connect to extension ", extId) //TODO REMOVE
-        _hub.on("sendMessage.apps", function(d) {
-            chromeExtPort.postMessage(d) //send message to chromeExt
-        })
-        chromeExtPort.onMessage.addListener(function(d) {
-            _hub.call("receiveMessage",
-                this, {
-                    code: d.code,
-                    data: JSON.stringify(
-                        d.data)
-                });
-        })
-        chromeExtPort.onDisconnect.addListener(function(e) {
-            console.log("disconnect to extension ", extId)
-            _hub.on("sendMessage.apps", null)
-            onclose()
-        })
-        _hub.on("_disconnect", function(d) {
-            console.log("disconnect to extension ", extId)
-            _hub.on("sendMessage.apps", null)
-            onclose()
-            chromeExtPort.disconnect()
-        })
-        status.connection = "Extension"
-        status.id = extId
-        callback(status)
+function _connectExt(extId, _hub, status, callback, onclose) {
+    var chromeExtPort = window.chrome.runtime.connect(
+        extId)
+    _hub.on("sendMessage.apps", function(d) {
+        chromeExtPort.postMessage(d) //send message to chromeExt
+    })
+    chromeExtPort.onMessage.addListener(function(d) {
+        _hub.call("receiveMessage",
+            this, {
+                code: d.code,
+                data: JSON.stringify(
+                    d.data)
+            });
+    })
+    chromeExtPort.onDisconnect.addListener(function(e) {
+        console.log("disconnect to extension ", extId)
+        _hub.on("sendMessage.apps", null)
+        onclose()
+    })
+    _hub.on("_disconnect", function(d) {
+        console.log("disconnect to extension ", extId)
+        _hub.on("sendMessage.apps", null)
+        onclose()
+        chromeExtPort.disconnect()
+    })
+    status.connection = "Extension"
+    status.id = extId
+    callback(status)
 }
 
 
-function _connectChan(channel,_hub,status,callback) {
-    console.log("connect to channel " + channel) //TODO REMOVE 
+function _connectChan(channel, _hub, status, callback) {
     try {
         var chan = new BroadcastChannel(channel)
         _hub.on("sendMessage.chan", function(d) {
@@ -169,8 +167,8 @@ function connect(chanId, extId, _hub, status, callback, onclose) {
     var chromeExtID = extId
     //var hasExtension
     var channel = chanId
-    var connectChan = function(){
-        _connectChan(channel,_hub,status,callback)
+    var connectChan = function() {
+        _connectChan(channel, _hub, status, callback)
     }
     try {
         window.chrome.runtime.sendMessage(chromeExtID, {
@@ -179,18 +177,16 @@ function connect(chanId, extId, _hub, status, callback, onclose) {
             function(reply) {
                 if (reply) {
                     if (reply.version) {
-                        //hasExtension = true;
                         connectExt();
                     }
                 } else {
-                    //hasExtension = false;
                     connectChan()
                 }
             });
     } catch (e) {
         connectChan()
     }
-    var connectExt = function(){
-        _connectExt(extId,_hub,status,callback,onclose)
-    } 
+    var connectExt = function() {
+        _connectExt(extId, _hub, status, callback, onclose)
+    }
 }
