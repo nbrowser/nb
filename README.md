@@ -15,9 +15,7 @@ var c = chan()
 var callback = function(status){
   console.log(status)
 }
-c.connect(function(status){
-  console.log(status)
-})
+c.connect(callback)
 
 //receive message from nbrowser bridge or BroadCast Channel.
 
@@ -30,7 +28,7 @@ c.on("brush",function(d){
 
 //send message to other nbrowser tabs
 
-var regions = [{"genome":"hg38","chr":"chr1","start":1,"end":1000000}]
+var regions = [{genome:"hg38",chr:"chr1",start:1,end:1000000},{genome:"hg38",chr:"chr2",start:1,end:100000}]
 
 c.call("update",this,regions)
 
