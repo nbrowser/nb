@@ -20,7 +20,6 @@ const config = {
         commonJS({
             include:'node_modules/**'
         })
-
     ]
 };
 

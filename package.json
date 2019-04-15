@@ -1,6 +1,6 @@
 {
   "name": "@nbrowser/nb-chan",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "description": "nbrowser channel",
   "keywords": [
     "nbrowser",
@@ -12,7 +12,7 @@
   "license": "BSD-3-Clause",
   "author": {
     "name": "Xiaopeng Zhu",
-    "url": "http://bl.ocks.org/nb1page"
+    "url": "https://github.com/nimezhu"
   },
   "main": "dist/nb-chan.js",
   "unpkg": "dist/nb-chan.min.js",

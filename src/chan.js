@@ -17,14 +17,25 @@ export default function() {
         status.id = ""
     });
 
+
+    var _dispatch //local dispatch for same webpage
+    var defaultCodes = ["update", "brush"]
+    if (arguments.length > 0) {
+        _dispatch = dispatch.apply(this, arguments)
+    } else {
+        _dispatch = dispatch.apply(this, defaultCodes)
+    }
+
     var onchange = function() {
 
     }
     var onclose = function() {
-        //TODO Add Other Handle
         onchange();
     }
-    var agent = function() {}
+    var agent = function() {
+        //TODO Call Agent
+    }
+    
     agent.connect = function(_) {
         if (typeof _ == "function") {
             connect(chanId, extId, hub, status, function(d) {
@@ -87,6 +98,9 @@ export default function() {
                     f(JSON.parse(d.data))
                 }
             })
+            _dispatch.on(a, function(d) {
+                f(d)
+            })
         }
     }
     agent.call = function(code, self, data) {
@@ -97,6 +111,8 @@ export default function() {
                 "code": code,
                 data: JSON.stringify(data)
             })
+            //local call
+            _dispatch.call(code, self, data)
         }
     }
     // TODO: Add Share Worker (share worker js) in case BroadcastChannel not support.
