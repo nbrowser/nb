@@ -4,7 +4,9 @@
 
 nb-chan is a communication channel for [Nucleome Browser](https://genome.compbio.cs.cmu.edu).
 
-nb-chan has the same function interface "on" and "call" as [d3-dispatch](https://github.com/d3/d3-dispatch). It is an [event emitter](https://nodejs.org/api/events.html) system between the tabs.
+nb-chan has the same function interface "on" and "call" as [d3-dispatch](https://github.com/d3/d3-dispatch). 
+
+It is a cross-domain [event emitter](https://nodejs.org/api/events.html) system.
 
 if user installed [Nucleome Bridge](https://chrome.google.com/webstore/detail/djcdicpaejhpgncicoglfckiappkoeof) (NBrowser chrome extension) , it will use NBridge to send messages between tabs from multiple domains, otherwise, it will use web browser's BroadCast Channel to send messages between tabs in the same domain.
 
@@ -16,7 +18,7 @@ Currently, nb-chan is used in Nucleome Browser for sending command and genome co
 Connect to channel.
 ```js
 import {chan} from "@nbrowser/nb-chan";
-var c = chan()
+var c = chan("update","brush")
 var callback = function(status){
   console.log(status)
 }
