@@ -24,7 +24,7 @@ var callback = function(status){
 }
 c.connect(callback)
 ```
-Listen to other NBrowser tabs.
+Listen to events in all chan connected tabs.
 ```js
 //receive message from nbrowser bridge or BroadCast Channel.
 
@@ -39,7 +39,7 @@ c.on("brush",function(d){
   //Add your code  (user brush these genome coordinates in other tab, respond accordingly )
 })
 ```
-Send messages to other NBrowser tabs
+Emit events to all chan connected tabs.
 ```js
 
 var regions = [{genome:"hg38",chr:"chr1",start:1,end:10000},{genome:"hg38",chr:"chr2",start:1,end:1000}]
