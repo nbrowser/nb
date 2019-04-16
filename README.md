@@ -2,16 +2,11 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@nbrowser/nb-chan.svg)](https://www.npmjs.com/package/@nbrowser/nb-chan)
 [![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/@nbrowser/nb-chan.svg)](https://github.com/nbrowser/nb-chan)
 
-nb-chan is a communication channel for [Nucleome Browser](https://genome.compbio.cs.cmu.edu).
+nb-chan is a cross-domain [event emitter](https://nodejs.org/api/events.html) for [Nucleome Browser](https://genome.compbio.cs.cmu.edu). nb-chan has the same initialize method and the same function interface "on" and "call" as [d3-dispatch](https://github.com/d3/d3-dispatch). 
 
-nb-chan has the same function interface "on" and "call" as [d3-dispatch](https://github.com/d3/d3-dispatch). 
+if user installed [Nucleome Bridge](https://chrome.google.com/webstore/detail/djcdicpaejhpgncicoglfckiappkoeof) (NBrowser chrome extension) , it will use NBridge to send event emittion between tabs from multiple domains, otherwise, it will use web browser's BroadCast Channel to send event emittion between tabs in the same domain.
 
-It is a cross-domain [event emitter](https://nodejs.org/api/events.html) system.
-
-if user installed [Nucleome Bridge](https://chrome.google.com/webstore/detail/djcdicpaejhpgncicoglfckiappkoeof) (NBrowser chrome extension) , it will use NBridge to send messages between tabs from multiple domains, otherwise, it will use web browser's BroadCast Channel to send messages between tabs in the same domain.
-
-Currently, nb-chan is used in Nucleome Browser for sending command and genome coordinates between tabs which host and render different modality multi scale genome related data, such as bigwig, bigbed, hic, images and three dimensional structure et al.　Here are the link for [Nucleome Browser Gallery](https://genome.compbio.cs.cmu.edu/static/gallery.html)
-
+The [Nucleome Browser Web Application](https://genome.compbio.cs.cmu.edu) is connected with nb-chan.
 
 ## Connect 
 
