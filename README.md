@@ -11,7 +11,7 @@ The [Nucleome Browser Web Application](https://genome.compbio.cs.cmu.edu) is con
 ## Connect 
 
 Connect to channel.
-```js
+```javascript
 import {chan} from "@nbrowser/nb-chan";
 var c = chan("update","brush")
 var callback = function(status){
@@ -20,7 +20,7 @@ var callback = function(status){
 c.connect(callback)
 ```
 Listen to events in all chan connected tabs.
-```js
+```javascript
 //receive message from nbrowser bridge or BroadCast Channel.
 
 c.on("update",function(d){
@@ -35,7 +35,7 @@ c.on("brush",function(d){
 })
 ```
 Emit events to all chan connected tabs.
-```js
+```javascript
 
 var regions = [{genome:"hg38",chr:"chr1",start:1,end:10000},{genome:"hg38",chr:"chr2",start:1,end:1000}]
 
@@ -74,7 +74,7 @@ If you want to your website can be connectable with NBridge, Please contact [us]
 ## API Reference
 
 Check the connection status of channel
-```js
+```javascript
   var c = nb.chan()
   c.connect(function(){
     console.log(c.status())
