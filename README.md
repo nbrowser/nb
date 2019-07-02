@@ -60,13 +60,14 @@ c.connect(function(status){
 </script>
 
 ```
-## Connect your web page with NBridge 
-Nucleome Bridge now support communication with UCSC Genome Browser and WashU EpiGenome Browser.
-Due to the web safety reason, any web sites which want to connect with *Nucleome Bridge* needs to satisfty the pattern specify in NBridge manifest.json file.
+## Connect your web page with *Nucleome Bridge*
+*Nucleome Bridge* now support communication with UCSC Genome Browser and WashU EpiGenome Browser.
 
-Currently, any local website such as `*://127.0.0.1:*/*` is connectable with *Nucleome Bridge*.
+Due to the web safety reason, any web sites which want to connect with *Nucleome Bridge* needs to satisfty the pattern specify in *Nucleome Bridge* manifest.json file.
 
-And for user share their web pages, `https://bl.ocks.org/*` is also connectable with *Nucleome Bridge*. User can test their web page in this website by submit their code to gist. For futhur information. Please read [this webpage](https://bl.ocks.org/-/about).
+Currently, any local website, whose IP address is such as `*://127.0.0.1:*/*`, is connectable with *Nucleome Bridge*.
+
+For user sharing their web pages, `https://bl.ocks.org/*` is also connectable with *Nucleome Bridge*. User can share their web page in this website by submit their code to gist. For futhur information. Please read [this webpage](https://bl.ocks.org/-/about).
 We also have some demos in bl.ocks.org, here is [the link](https://bl.ocks.org/nb1page).
 
 If you want to your website can be connectable with *Nucleome Bridge*, Please contact [us](mailto:zhuxp@cmu.edu). 
