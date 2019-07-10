@@ -2,7 +2,7 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@nbrowser/nb-chan.svg)](https://www.npmjs.com/package/@nbrowser/nb-chan)
 [![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/@nbrowser/nb-chan.svg)](https://github.com/nbrowser/nb-chan)
 
-nb-chan is a cross-domain [event emitter](https://nodejs.org/api/events.html) for [Nucleome Platform](http://v.nucleome.org). nb-chan has the same initialize method and the same function interface "on" and "call" as [d3-dispatch](https://github.com/d3/d3-dispatch). 
+nb-chan is a cross-domain [event emitter](https://nodejs.org/api/events.html) for [Nucleome Platform](http://doc.nucleome.org). nb-chan has the same initialize method and the same function interface "on" and "call" as [d3-dispatch](https://github.com/d3/d3-dispatch). 
 
 if user install our chrome extension [*Nucleome Bridge*](https://chrome.google.com/webstore/detail/djcdicpaejhpgncicoglfckiappkoeof), nb-chan will use *Nucleome Bridge* to send event emittion between tabs from multiple domains, otherwise, it will use web browser's *BroadCast Channel* to send event emittion between tabs within the same domain.
 
