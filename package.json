@@ -1,14 +1,15 @@
 {
   "name": "@nbrowser/nb-chan",
-  "version": "0.0.2",
-  "description": "nbrowser channel",
+  "version": "0.0.3",
+  "description": "nbrowser dispatch",
   "keywords": [
     "nbrowser",
     "nbrowser-module",
     "bridge",
-    "channel"
+    "channel",
+    "dispatch"
   ],
-  "homepage": "https://genome.compbio.cs.cmu.edu",
+  "homepage": "https://vis.nucleome.org",
   "license": "BSD-3-Clause",
   "author": {
     "name": "Xiaopeng Zhu",
@@ -23,7 +24,7 @@
     "url": "https://github.com/nbrowser/nb-chan.git"
   },
   "dependencies": {
-    "d3-dispatch": "1.0.5"
+    "d3-dispatch": "^1.0.5"
   },
   "scripts": {
     "pretest": "rollup -c",

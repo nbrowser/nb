@@ -93,12 +93,12 @@ export default function() {
             // agent.on("code.x",function(data){})
             // translate to
             // agent.on("receiveMessage.code.x",function({"code":code,data:JSON.stringify(data)}))
-            hub.on("receiveMessage".concat(".").concat(a), function(d) {
+            hub.on("receiveMessage".concat(".").concat(m), function(d) {
                 if (d.code === m0) {
                     f(JSON.parse(d.data))
                 }
             })
-            _dispatch.on(a, function(d) {
+            _dispatch.on(m, function(d) {
                 f(d)
             })
         }
